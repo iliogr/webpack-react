@@ -5,7 +5,7 @@ module.exports = merge(baseConfig, {
     devtool: 'eval-source-map',
     devServer: {
         contentBase: './dist',
-        port: '3001',
+        port: '3002',
     },
     module: {
         rules: [{

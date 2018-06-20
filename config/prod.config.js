@@ -1,9 +1,8 @@
-const webpack               = require('webpack');
-const ExtractTextPlugin     = require('extract-text-webpack-plugin');
-const merge                 = require('webpack-merge');
-const UglifyJsPlugin        = require('uglifyjs-webpack-plugin');
-const HtmlWebpackPlugin     = require('html-webpack-plugin')
-const baseConfig            = require('./base.config.js');
+const webpack               = require('webpack')
+const ExtractTextPlugin     = require('extract-text-webpack-plugin')
+const merge                 = require('webpack-merge')
+const UglifyJsPlugin        = require('uglifyjs-webpack-plugin')
+const baseConfig            = require('./base.config.js')
 const path                  = require('path')
 const BASE                  = path.join(__dirname, '../')
 
@@ -25,11 +24,6 @@ module.exports = merge(baseConfig, {
         ],
     },
     plugins: [
-        // Creates HTML base template
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            filename: './index.html'
-        }),
         // Extract imported CSS into own file
         new ExtractTextPlugin({
             filename: 'style.css'
