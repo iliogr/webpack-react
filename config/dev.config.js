@@ -5,11 +5,12 @@ module.exports = merge(baseConfig, {
     devtool: 'eval-source-map',
     devServer: {
         contentBase: './dist',
-        port: '3002',
+        historyApiFallback: true,
+        port: '3002'
     },
     module: {
         rules: [{
-            test: /\.scss$/,
+            test: [/\.scss$/, /\.css$/],
             use: [{
                     loader: "style-loader"
                 },

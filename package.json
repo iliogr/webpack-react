@@ -1,53 +1,49 @@
 {
-    "name": "webpack-react",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "name": "react-scaffold",
+    "version": "0.1.1",
+    "private": true,
     "dependencies": {
-        "history": "^4.7.2",
-        "react": "^16.4.1",
-        "react-dom": "^16.4.1",
-        "react-redux": "^5.0.7",
+        "axios": "^0.18.1",
+        "connected-react-router": "^6.5.2",
+        "history": "^4.10.1",
+        "npm-run-all": "^4.1.5",
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "react-redux": "^7.1.1",
         "react-router-dom": "^4.3.1",
-        "react-router-redux": "^4.0.8",
-        "redux": "^4.0.0",
+        "react-router-redux": "^5.0.0-alpha.9",
+        "react-scripts": "1.1.4",
+        "redux": "^4.0.4",
+        "redux-devtools-extension": "^2.13.8",
         "redux-thunk": "^2.3.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.0.0-beta.51",
-        "@babel/preset-env": "^7.0.0-beta.51",
-        "@babel/preset-react": "^7.0.0-beta.51",
-        "@babel/preset-stage-2": "^7.0.0-beta.51",
-        "babel-loader": "^8.0.0-beta.3",
+        "@babel/core": "^7.6.0",
+        "@babel/plugin-proposal-class-properties": "^7.5.5",
+        "@babel/preset-env": "^7.6.0",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/preset-stage-2": "^7.0.0",
+        "babel-loader": "^8.0.6",
         "css-loader": "^0.28.11",
         "extract-loader": "^2.0.1",
         "extract-text-webpack-plugin": "^4.0.0-beta.0",
         "file-loader": "^1.1.11",
         "html-webpack-plugin": "^3.2.0",
-        "mini-css-extract-plugin": "^0.4.0",
-        "node-sass": "^4.9.0",
-        "postcss-loader": "^2.1.5",
-        "react-hot-loader": "^4.3.3",
-        "sass-loader": "^7.0.3",
+        "mini-css-extract-plugin": "^0.4.5",
+        "node-sass": "^4.12.0",
+        "postcss-loader": "^2.1.6",
+        "react-hot-loader": "^4.12.13",
+        "sass-loader": "^7.3.1",
         "style-loader": "^0.21.0",
-        "uglifyjs-webpack-plugin": "^1.2.6",
-        "webpack": "^4.12.0",
-        "webpack-cli": "^3.0.8",
-        "webpack-dev-server": "^3.1.4",
-        "webpack-merge": "^4.1.3"
+        "uglifyjs-webpack-plugin": "^1.3.0",
+        "webpack": "^4.40.2",
+        "webpack-cli": "^3.3.9",
+        "webpack-dev-server": "^3.8.1",
+        "webpack-merge": "^4.2.2"
     },
     "scripts": {
         "start": "NODE_ENV=development webpack-dev-server --mode development --config config/dev.config.js --hot --inline --open",
-        "build": "NODE_ENV=production webpack --mode production --config config/prod.config.js --env prod --progress --profile --colors"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/iliogr/webpack-react.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/iliogr/webpack-react/issues"
-    },
-    "homepage": "https://github.com/iliogr/webpack-react#readme"
+        "build": "NODE_ENV=production webpack --mode production --config config/prod.config.js --env prod --progress --profile --colors",
+        "windows": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development --config config/dev.config.js --hot --inline --open"
+    }
 }

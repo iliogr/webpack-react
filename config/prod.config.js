@@ -1,10 +1,10 @@
-const webpack               = require('webpack')
-const ExtractTextPlugin     = require('extract-text-webpack-plugin')
-const merge                 = require('webpack-merge')
-const UglifyJsPlugin        = require('uglifyjs-webpack-plugin')
-const baseConfig            = require('./base.config.js')
-const path                  = require('path')
-const BASE                  = path.join(__dirname, '../')
+const webpack               = require('webpack');
+const merge                 = require('webpack-merge');
+const UglifyJsPlugin        = require('uglifyjs-webpack-plugin');
+const baseConfig            = require('./base.config.js');
+const path                  = require('path');
+const BASE                  = path.join(__dirname, '../');
+const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
 
 module.exports = merge(baseConfig, {
     output: {
@@ -15,17 +15,22 @@ module.exports = merge(baseConfig, {
     module: {
         rules: [
             {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader!sass-loader",
-                })
+                test: [/\.scss$/, /\.css$/],
+                use: [{
+                    loader: "style-loader"
+                },
+                {
+                    loader: "css-loader"
+                },
+                {
+                    loader: "sass-loader"
+                }]
             }
         ],
     },
     plugins: [
         // Extract imported CSS into own file
-        new ExtractTextPlugin({
+        new MiniCssExtractPlugin({
             filename: 'style.css'
         }),
         // Minify JS
